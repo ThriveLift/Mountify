@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  color: unset;
+  background-color: unset;
+  border: unset;
+}
+
+/* <uniquifier>: Use a unique and descriptive class name */
+
+.suse-heading {
+  font-family: "SUSE", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-regular-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.roboto-bold-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/*
+
+*/
+.mobile_menu-bg_color {
+  background: -moz-linear-gradient(
+    180deg,
+    rgba(8, 136, 228, 1) 0%,
+    rgba(39, 101, 129, 1) 54%
+  );
+
+  background: -webkit-linear-gradient(
+    180deg,
+    rgba(8, 136, 228, 1) 0%,
+    rgba(39, 101, 129, 1) 54%
+  );
+
+  background: -o-linear-gradient(
+    180deg,
+    rgba(8, 136, 228, 1) 0%,
+    rgba(39, 101, 129, 1) 54%
+  );
+
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#276581', endColorstr='#0888E4', GradientType=1 );
+
+  background: -ms-linear-gradient(
+    180deg,
+    rgba(8, 136, 228, 1) 0%,
+    rgba(39, 101, 129, 1) 54%
+  );
+
+  background: linear-gradient(
+    180deg,
+    rgba(8, 136, 228, 1) 0%,
+    rgba(39, 101, 129, 1) 54%
+  );
+}

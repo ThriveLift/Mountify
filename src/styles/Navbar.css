@@ -1,0 +1,125 @@
+.mountify__navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 8rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mountify__navbar-menu_list {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+  font-size: 1rem;
+}
+.mountify__navbar-menu_list li {
+  padding: 0 1rem;
+}
+
+.custom_button {
+  background-color: rgb(0, 177, 253);
+  box-shadow: 0px 0px 17px 2px rgb(119 119 119 / 15%);
+  border-radius: 16px;
+  color: white;
+}
+.customButton:hover {
+  background-color: rgba(1, 157, 224, 0.884);
+}
+
+.mountify__navbar-contactButton {
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+}
+
+.mountify__navbar-mobileMenu {
+  position: relative;
+  display: none;
+}
+.mountify__navbar-mobileMenu-contactButton {
+  display: none;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+}
+
+.mountify__navbar-mobileMenu_list {
+  position: absolute;
+  text-align: center;
+  right: 1rem;
+  top: 60px;
+  padding: 3rem 2rem;
+  font-size: 1.4rem;
+  color: white;
+  border-radius: 8px;
+}
+.mountify__navbar-mobileMenu_list li {
+  margin: 0.8rem 0;
+  width: 8rem;
+}
+
+.showMenu {
+  display: block;
+}
+.hideMenu {
+  display: none;
+}
+
+/* 
+480, 768, 1024, 1440 - SIZES
+ */
+
+@media screen and (max-width: 1440px) {
+  .mountify__navbar {
+    padding: 2rem 8rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .mountify__navbar {
+    padding: 2rem 4vw;
+  }
+  .mountify__navbar-logo img {
+    width: 160px;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .mountify__navbar {
+    padding: 1.5rem;
+  }
+
+  .mountify__navbar-menu_list {
+    display: none;
+  }
+
+  .mountify__navbar-mobileMenu {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mountify__navbar {
+    padding: 1rem 1rem;
+  }
+  .mountify__navbar-contactButton {
+    display: none;
+  }
+  .mountify__navbar-mobileMenu-contactButton {
+    display: block;
+  }
+  .mountify__navbar-logo img {
+    width: 150px;
+  }
+
+  .mobileMenu-icon {
+    font-size: 32px;
+  }
+}
