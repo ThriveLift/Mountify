@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <div className="mountify__navbar roboto-regular">
       <div className="mountify__navbar-logo">
-        <img src={logo} alt="" width={180} />
+        <img src={logo} alt="" width={275} />
       </div>
 
       <nav>
@@ -71,9 +71,9 @@ const Navbar = () => {
             <li>
               <a href="">Info</a>
             </li>
-            <a className="mountify__navbar-mobileMenu-contactButton custom_button wobble-hor-bottom ">
-              Contact
-            </a>
+            <div className="mountify__navbar-mobileMenu-contactButton">
+              <a className="custom_button wobble-hor-bottom ">Contact</a>
+            </div>
           </ul>
         </div>
       </nav>

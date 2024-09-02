@@ -42,18 +42,25 @@ const Header = () => {
   };
 
   useEffect(() => {
-    writeLoop();
+    let isCancelled = false;
 
-    // Cleanup if needed (e.g., stopping the loop)
+    const startWriting = async () => {
+      if (!isCancelled) {
+        await writeLoop();
+      }
+    };
+
+    startWriting();
+
     return () => {
-      // Optionally add logic here to stop the loop if needed
+      isCancelled = true; // This stops the loop when the component unmounts or re-renders
     };
   }, []);
 
   return (
     <div className="app__header suse-heading">
       <div className="app__header-contents">
-        <h1 className="app__header-title">
+        <h1 className="app__header-title ">
           <span ref={el} className="typewriter"></span> <br />
           TV & Soundbar <br /> Mounting
         </h1>

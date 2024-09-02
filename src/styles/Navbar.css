@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 8rem;
+  padding: 2rem 4rem;
 }
 
 nav {
@@ -17,13 +17,14 @@ nav {
   justify-content: flex-end;
   align-items: center;
   flex: 1;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 .mountify__navbar-menu_list li {
   padding: 0 1rem;
 }
 
 .mountify__navbar-contactButton {
+  font-size: 1.2rem;
   padding: 0.5rem 1rem;
   margin-left: 1rem;
 }
@@ -40,7 +41,7 @@ nav {
 
 .mountify__navbar-mobileMenu_list {
   position: absolute;
-  text-align: center; 
+  text-align: center;
   right: 1rem;
   top: 60px;
   padding: 3rem 2rem;
@@ -64,18 +65,15 @@ nav {
 480, 768, 1024, 1440 - SIZES
  */
 
-@media screen and (max-width: 1440px) {
-  .mountify__navbar {
-    padding: 2rem 8rem;
-  }
-}
-
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1040px) {
   .mountify__navbar {
     padding: 2rem 4vw;
   }
   .mountify__navbar-logo img {
     width: 160px;
+  }
+  .mountify__navbar-menu_list li {
+    padding: 0 0.5rem;
   }
 }
 
