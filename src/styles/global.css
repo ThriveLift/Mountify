@@ -7,6 +7,7 @@
   color: unset;
   background-color: unset;
   border: unset;
+  font-display: swap;
 }
 
 /* <uniquifier>: Use a unique and descriptive class name */
@@ -42,9 +43,71 @@
   font-style: italic;
 }
 
-/*
+/* 
+
 
 */
+
+.custom_button {
+  background-color: rgb(0, 177, 253);
+  box-shadow: 0px 0px 17px 2px rgb(119 119 119 / 15%);
+  border-radius: 16px;
+  color: white;
+}
+.customButton:hover {
+  background-color: rgba(1, 157, 224, 0.884);
+}
+
+/*
+
+
+*/
+
+.gradient-bg {
+  /* ff 3.6+ */
+  background: -moz-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(209, 250, 255, 0.38) 14%,
+    rgba(255, 246, 211, 1) 100%
+  );
+
+  /* safari 5.1+,chrome 10+ */
+  background: -webkit-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(209, 250, 255, 0.38) 14%,
+    rgba(255, 246, 211, 1) 100%
+  );
+
+  /* opera 11.10+ */
+  background: -o-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(209, 250, 255, 0.38) 14%,
+    rgba(255, 246, 211, 1) 100%
+  );
+
+  /* ie 6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF6D3', endColorstr='#FFFFFF', GradientType=1 );
+
+  /* ie 10+ */
+  background: -ms-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(209, 250, 255, 0.38) 14%,
+    rgba(255, 246, 211, 1) 100%
+  );
+
+  /* global 94%+ browsers support */
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(209, 250, 255, 0.38) 14%,
+    rgba(255, 246, 211, 1) 100%
+  );
+}
+
 .mobile_menu-bg_color {
   background: -moz-linear-gradient(
     180deg,

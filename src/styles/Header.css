@@ -1,4 +1,43 @@
 .app__header {
+  display: flex;
+
   height: 80vh;
-  background-color: red;
+  padding: 4rem;
+}
+
+.app__header-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 60%;
+}
+.app__header-title {
+  font-size: 6rem;
+}
+
+.app__header-text {
+  font-size: 3rem;
+  padding-bottom: 2rem;
+}
+
+.app__header-button {
+  font-size: 2rem;
+  padding: 1.5rem;
+}
+
+.app__header-image {
+  flex: 1;
+  padding: 2rem;
+}
+.app__header-image img {
+  width: 100%;
+}
+
+@media screen and (min-width: 1440px) {
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 480px) {
 }
