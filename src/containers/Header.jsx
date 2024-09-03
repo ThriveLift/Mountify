@@ -1,8 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import "../styles/Header.css";
 
-import headerImage from "../assets/project_2.png";
-
 const Header = () => {
   function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
@@ -58,26 +56,21 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="app__header suse-heading">
-      <div className="app__header-contents">
-        <h1 className="app__header-title ">
+    <div className="mountify__header">
+      <div className="mountify__header-contents">
+        <h1 className="app__header-title suse">
           <span ref={el} className="typewriter"></span> <br />
-          TV & Soundbar <br /> Mounting
+          TV & Soundbar Mounting
         </h1>
-
-        <p className="app__header-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-          libero modi enim et facilis sint aliquid non, eaque delectus corrupti
-          suscipit provident aperiam sed optio?
-        </p>
-
-        <a href="" className="app__header-button custom_button ">
-          Contact Today
-        </a>
+        <div className="custom_button">Free Quote</div>
       </div>
 
-      <div className="app__header-image">
-        <img src={headerImage} alt="Mounted Tv" />
+      <div className="mountify__header-projects">
+        <div className="mountify__header-project_card">Project 1</div>
+        <div className="mountify__header-project_card">Project 2</div>
+        <div className="mountify__header-project_card">Project 3</div>
+        <div className="mountify__header-project_card">Project 4</div>
+        {/* Add more cards as needed */}
       </div>
     </div>
   );

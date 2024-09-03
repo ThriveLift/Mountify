@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import logo from "../assets/logo.png";
 import { CgMenu, CgClose } from "react-icons/cg";
+
+import Logo from "../assets/logo.png";
 
 import "../styles/Navbar.css";
 
@@ -9,74 +10,63 @@ const Navbar = () => {
 
   const handleClick = () => {
     setIsMenuVisible(!isMenuVisible);
+    document.body.style.overflowX = isMenuVisible ? "visible" : "hidden";
   };
 
+  const navItems = [
+    { name: "Home", link: "/" },
+    { name: "About Us", link: "/about" },
+    { name: "Projects", link: "/projects" },
+    { name: "Reviews", link: "/reviews" },
+    { name: "Info", link: "/info" },
+  ];
+
   return (
-    <div className="mountify__navbar roboto-regular">
+    <div className="mountify__navbar">
       <div className="mountify__navbar-logo">
-        <img src={logo} alt="" width={275} />
+        <img src={Logo} alt="Mountify Logo" />
       </div>
 
-      <nav>
-        <ul className="mountify__navbar-menu_list hidden nunito-sans-d">
-          <li>
-            <a href="">Home</a>
+      <div className="mountify__navbar-menu_list">
+        {navItems.map((item, index) => (
+          <li key={index}>
+            <a href={item.link}>{item.name}</a>
           </li>
-          <li>
-            <a href="">About Us</a>
-          </li>
+        ))}
+      </div>
 
-          <li>
-            <a href="">Projects</a>
-          </li>
-          <li>
-            <a href="">Reviews</a>
-          </li>
-          <li>
-            <a href="">Info</a>
-          </li>
-        </ul>
-
-        <a className="mountify__navbar-contactButton custom_button" href="">
+      <div className="mountify__navbar-mobileMenu">
+        <a className="custom_button mountify__navbar-mobileMenu_button-outside">
           Contact
         </a>
 
-        <div className="mountify__navbar-mobileMenu">
-          <button onClick={handleClick}>
-            {isMenuVisible ? (
-              <CgClose className="mobileMenu-icon" fontSize={42} />
-            ) : (
-              <CgMenu className="mobileMenu-icon" fontSize={42} />
-            )}
-          </button>
+        <button onClick={handleClick} aria-label="Toggle Navigation menu">
+          {isMenuVisible ? (
+            <CgClose className="mobileMenu-icon" fontSize={42} />
+          ) : (
+            <CgMenu className="mobileMenu-icon" fontSize={42} />
+          )}
+        </button>
 
-          <ul
-            id="hideMenu"
-            className={`mountify__navbar-mobileMenu_list ${
-              isMenuVisible ? "showMenu" : "hideMenu"
-            } mobile_menu-bg_color`}
-          >
-            <li>
-              <a href="">Home</a>
+        <div
+          className={`mountify__navbar-mobileMenu_list-container ${
+            isMenuVisible ? "showMenu" : "hideMenu"
+          }`}
+        >
+          <ul className="mountify__navbar-mobileMenu_list">
+            {navItems.map((item, index) => (
+              <li key={index}>
+                <a href={item.link}>{item.name}</a>
+              </li>
+            ))}
+            <li className="mountify__navbar-mobileMenu_button-insde">
+              <a href="/" className="custom_button">
+                Contact
+              </a>
             </li>
-            <li>
-              <a href="">About Us</a>
-            </li>
-            <li>
-              <a href="">Projects</a>
-            </li>
-            <li>
-              <a href="">Reviews</a>
-            </li>
-            <li>
-              <a href="">Info</a>
-            </li>
-            <div className="mountify__navbar-mobileMenu-contactButton">
-              <a className="custom_button wobble-hor-bottom ">Contact</a>
-            </div>
           </ul>
         </div>
-      </nav>
+      </div>
     </div>
   );
 };

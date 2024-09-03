@@ -1,113 +1,134 @@
+/* Reset any potential overflow issues */
+/* body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+} */
+
 .mountify__navbar {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 4rem;
+  padding: 1rem;
+  width: 100vw;
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.mountify__navbar-menu_list {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  flex: 1;
-  font-size: 1.2rem;
-}
-.mountify__navbar-menu_list li {
-  padding: 0 1rem;
-}
-
-.mountify__navbar-contactButton {
-  font-size: 1.2rem;
-  padding: 0.5rem 1rem;
-  margin-left: 1rem;
+.mountify__navbar-logo img {
+  width: 140px;
 }
 
 .mountify__navbar-mobileMenu {
-  position: relative;
-  display: none;
+  display: flex;
 }
-.mountify__navbar-mobileMenu-contactButton {
-  display: none;
-  padding: 0.5rem 1rem;
-  margin-top: 1rem;
+
+/* Mobile Menu Icon */
+.mobileMenu-icon {
+  font-size: 1.75rem;
+  z-index: 100;
+  margin-left: 1rem;
+}
+
+/* Mobile Menu Container */
+.mountify__navbar-mobileMenu_list-container {
+  position: fixed;
+  top: 5rem;
+  right: -100vw; /* Start off-screen */
+  text-align: center;
+  color: white;
+  background: var(--black-gradient-color-);
+  padding: 2rem 4rem;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 4px 1px #00000030;
+  z-index: 1;
+  transition: transform 0.3s ease-in-out, right 0.3s ease-in-out;
 }
 
 .mountify__navbar-mobileMenu_list {
-  position: absolute;
-  text-align: center;
-  right: 1rem;
-  top: 60px;
-  padding: 3rem 2rem;
-  font-size: 1.4rem;
-  color: white;
-  border-radius: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
+
 .mountify__navbar-mobileMenu_list li {
-  margin: 0.8rem 0;
-  width: 8rem;
+  font-size: 1rem;
+  padding: 0.75rem 0;
 }
 
+.mountify__navbar-mobileMenu_list .button {
+  margin-top: 1rem;
+}
+
+/* Transform and position for showing/hiding the menu */
 .showMenu {
-  display: block;
+  right: 1rem; /* Slide in to be visible on the screen */
 }
+
 .hideMenu {
+  right: -100vw; /* Hide off-screen to the right */
+}
+
+.mountify__navbar-mobileMenu_button-outside {
   display: none;
+  font-weight: 600;
+}
+.mountify__navbar-menu_list {
+  display: none;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+}
+.mountify__navbar-menu_list li {
+  padding: 0 1rem;
+  font-weight: 600;
 }
 
-/* 
-480, 768, 1024, 1440 - SIZES
- */
-
-@media screen and (max-width: 1040px) {
+@media screen and (min-width: 480px) {
   .mountify__navbar {
-    padding: 2rem 4vw;
-  }
-  .mountify__navbar-logo img {
-    width: 160px;
-  }
-  .mountify__navbar-menu_list li {
-    padding: 0 0.5rem;
-  }
-}
-
-@media screen and (max-width: 790px) {
-  .mountify__navbar {
-    padding: 1.5rem;
+    padding: 1.25rem 1.75rem;
   }
 
-  .mountify__navbar-menu_list {
+  .mountify__navbar-mobileMenu_button-outside {
+    display: block;
+  }
+  .mountify__navbar-mobileMenu_button-insde {
     display: none;
   }
+}
 
-  .mountify__navbar-mobileMenu {
+@media screen and (min-width: 768px) {
+  .mountify__navbar-logo img {
+    width: 180px;
+  }
+
+  .mountify__navbar {
+    padding: 1.25rem 1.75rem;
+  }
+  .mountify__navbar-mobileMenu button {
+    display: none;
+  }
+  .mountify__navbar-menu_list {
     display: flex;
-    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .mountify__navbar {
+    padding: 1.25rem 7vw;
+  }
+  .mountify__navbar-logo img {
+    width: 240px;
+  }
+  .mountify__navbar-menu_list li {
+    font-size: 1.2rem;
+  }
+  .mountify__navbar-mobileMenu_button-outside {
+    font-size: 1.2rem;
     margin-left: 1rem;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 1200px) {
   .mountify__navbar {
-    padding: 1rem 1rem;
-  }
-  .mountify__navbar-contactButton {
-    display: none;
-  }
-  .mountify__navbar-mobileMenu-contactButton {
-    display: block;
-  }
-  .mountify__navbar-logo img {
-    width: 150px;
-  }
-
-  .mobileMenu-icon {
-    font-size: 32px;
+    padding: 1.25rem 7vw;
   }
 }

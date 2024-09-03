@@ -1,7 +1,32 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
-  text-decoration: none;
+/* APP CSS
+  - Specific to main structure or layout of your application.
+  - Specific Styles tied directly to the app's core components.
+  - Builds ontop of Global Styles
+*/
+
+/* App container styles */
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Main heading */
+h1 {
+  font-size: 2rem;
+}
+
+.gradient-bg {
+  background: linear-gradient(180deg, white 0%, var(--creamWall-color-) 100%);
+}
+
+.custom_button {
+  background: var(--blue-gradient-color-);
+  padding: 0.35rem 0.75rem;
+  border-radius: 0.75rem;
+  color: white;
+  cursor: pointer;
+}
+.custom_button:hover {
+  background: rgb(28, 139, 199);
 }
