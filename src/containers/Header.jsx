@@ -1,13 +1,12 @@
 import React, { useRef, useEffect } from "react";
-import "../styles/Header.css";
+import "./Header.css";
+import ProjectCarousel from "../constrants/ProjectCarousel";
 
-const Header = () => {
-  function sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  }
-
+const Header = ({ toggleContactForm }) => {
   const serviceArea = ["Gold Coasts", "Burleighs"];
   const el = useRef(null);
+
+  const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
   const writeLoop = async () => {
     let curServiceAreaIndex = 0;
@@ -60,18 +59,13 @@ const Header = () => {
       <div className="mountify__header-contents">
         <h1 className="app__header-title suse">
           <span ref={el} className="typewriter"></span> <br />
-          TV & Soundbar Mounting
+          TV & Soundbar <br /> Mounting
         </h1>
-        <div className="custom_button">Free Quote</div>
+        <button className="custom_button" onClick={toggleContactForm}>
+          Free Quote
+        </button>
       </div>
-
-      <div className="mountify__header-projects">
-        <div className="mountify__header-project_card">Project 1</div>
-        <div className="mountify__header-project_card">Project 2</div>
-        <div className="mountify__header-project_card">Project 3</div>
-        <div className="mountify__header-project_card">Project 4</div>
-        {/* Add more cards as needed */}
-      </div>
+      <ProjectCarousel />
     </div>
   );
 };

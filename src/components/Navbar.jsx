@@ -3,9 +3,9 @@ import { CgMenu, CgClose } from "react-icons/cg";
 
 import Logo from "../assets/logo.png";
 
-import "../styles/Navbar.css";
+import "./Navbar.css";
 
-const Navbar = () => {
+const Navbar = ({ toggleContactForm }) => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   const handleClick = () => {
@@ -36,7 +36,10 @@ const Navbar = () => {
       </div>
 
       <div className="mountify__navbar-mobileMenu">
-        <a className="custom_button mountify__navbar-mobileMenu_button-outside">
+        <a
+          className="custom_button mountify__navbar-mobileMenu_button-outside"
+          onClick={toggleContactForm}
+        >
           Contact
         </a>
 
@@ -60,7 +63,7 @@ const Navbar = () => {
               </li>
             ))}
             <li className="mountify__navbar-mobileMenu_button-insde">
-              <a href="/" className="custom_button">
+              <a className="custom_button" onClick={toggleContactForm}>
                 Contact
               </a>
             </li>
