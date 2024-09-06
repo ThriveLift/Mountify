@@ -61,6 +61,7 @@ const Header = ({ toggleContactForm }) => {
           <span ref={el} className="typewriter"></span> <br />
           TV & Soundbar <br /> Mounting
         </h1>
+
         <button className="custom_button" onClick={toggleContactForm}>
           Free Quote
         </button>

@@ -1,37 +1,75 @@
 import React, { useRef, useEffect, useState } from "react";
 import projects from "./index";
+import "./ProjectCarousel.css";
 
 const ProjectCarousel = () => {
   const carouselRef = useRef(null);
-  const [specialIndex, setSpecialIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
+  // Function to smoothly scroll to a position
+  const scrollToPosition = (targetPosition, duration) => {
+    if (carouselRef.current) {
+      const start = carouselRef.current.scrollLeft;
+      const startTime = performance.now();
+
+      const scroll = (currentTime) => {
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        const easeInOut =
+          progress < 0.5
+            ? 2 * progress * progress
+            : -1 + (4 - 2 * progress) * progress;
+
+        carouselRef.current.scrollLeft =
+          start + (targetPosition - start) * easeInOut;
+
+        if (timeElapsed < duration) {
+          requestAnimationFrame(scroll);
+        }
+      };
+
+      requestAnimationFrame(scroll);
+    }
+  };
+
+  // Convert viewport width (vw) to pixels
+  const vwToPixels = (vw) => {
+    return (vw / 100) * window.innerWidth;
+  };
+
+  // Scroll handler for active index update on scroll
   useEffect(() => {
-    // Function to handle the scroll event
     const handleScroll = () => {
       if (carouselRef.current) {
-        const carouselWidth = carouselRef.current.offsetWidth;
-        const projectWidth = carouselRef.current.children[0].offsetWidth;
-        const margin = 24; // Adjust according to your margin
-        const scrollAmount = projectWidth + margin;
+        const carousel = carouselRef.current;
+        const carouselWidth = carousel.offsetWidth;
+        const scrollPosition = carousel.scrollLeft;
 
-        // Calculate the index of the project card that should have the special class
-        const scrollPosition = carouselRef.current.scrollLeft;
-        const visibleIndex = Math.round(scrollPosition / scrollAmount);
+        let newActiveIndex = 0;
+        let closestDistance = Infinity;
 
-        if (visibleIndex !== specialIndex) {
-          setSpecialIndex(visibleIndex);
-        }
+        Array.from(carousel.children).forEach((child, index) => {
+          const childWidth = child.offsetWidth;
+          const childLeft = child.offsetLeft;
+
+          // Calculate distance from the center of the viewport
+          const distance = Math.abs(
+            childLeft + childWidth / 2 - (scrollPosition + carouselWidth / 2)
+          );
+
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            newActiveIndex = index;
+          }
+        });
+
+        setActiveIndex(newActiveIndex);
       }
     };
 
     const carouselElement = carouselRef.current;
-
     if (carouselElement) {
-      // Attach scroll event listener
       carouselElement.addEventListener("scroll", handleScroll);
-
-      // Initial check
-      handleScroll();
     }
 
     return () => {
@@ -39,40 +77,34 @@ const ProjectCarousel = () => {
         carouselElement.removeEventListener("scroll", handleScroll);
       }
     };
-  }, [specialIndex]);
+  }, []);
 
+  // Effect for initial scroll on load
   useEffect(() => {
-    // Automatically scroll the carousel on load
-    const scrollToPosition = () => {
-      if (carouselRef.current) {
-        const carouselWidth = carouselRef.current.offsetWidth;
-        const scrollAmount = carouselWidth * 0.4; // Scroll 10% of the carousel width
-        carouselRef.current.scrollTo({
-          left: scrollAmount,
-          behavior: "smooth", // Smooth scroll effect
-        });
-      }
-    };
+    const delay = 1560; // Delay in milliseconds before scrolling
+    const duration = 900; // Duration of the scroll animation
+    const scrollAmountVW = 32; // Amount to scroll (in viewport width units)
 
-    // Delay the scroll action to ensure the component is fully rendered
-    const timer = setTimeout(scrollToPosition, 1000); // Delay for 1 second
+    const scrollAmountPixels = vwToPixels(scrollAmountVW);
 
-    return () => clearTimeout(timer); // Cleanup timeout on component unmount
+    const timer = setTimeout(() => {
+      scrollToPosition(scrollAmountPixels, duration);
+    }, delay);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className="mountify__header-projects" ref={carouselRef}>
+    <div className="project-carousel" ref={carouselRef}>
       {projects.map((project, index) => (
         <div
           key={index}
-          className={`mountify__header-project_card ${
-            specialIndex === index ? "special" : ""
-          }`}
+          className={`project-card ${activeIndex === index ? "active" : ""}`}
         >
           <img
-            className="mountify__header-project_card-image"
             src={project.imgSrc}
             alt={project.title}
+            className="project-image"
           />
         </div>
       ))}

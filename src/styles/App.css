@@ -17,6 +17,7 @@ h1 {
 }
 
 .gradient-bg {
+  position: relative;
   background: linear-gradient(180deg, white 0%, var(--creamWall-color-) 100%);
 }
 

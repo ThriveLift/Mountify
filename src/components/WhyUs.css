@@ -1,0 +1,32 @@
+.mountify__whyUs {
+  padding: 1rem;
+  padding-top: 15vw;
+}
+
+.mountify__whyUs-title {
+  font-size: calc(1.2rem + 5vw);
+  font-weight: 600;
+  padding-bottom: 1.25rem;
+}
+
+.mountify__whyUs-box1_title {
+  font-size: 1.75rem;
+  background: var(--blue-gradient-color-);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mountify__whyUs-box1_text {
+  font-size: 1.25rem;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.mountify__whyUs-content_box:first-child {
+  /* padding-bottom: 1rem; */
+}
+
+.mountify__whyUs-content_box:last-child,
+.mountify__whyUs-box1_title .mountify__whyUs-box1_text {
+  text-align: right;
+}

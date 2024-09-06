@@ -1,59 +1,27 @@
+.mountify__header {
+  padding: 1rem 0;
+  padding-bottom: 0vw;
+}
+
 .mountify__header-contents {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 1rem;
   flex-shrink: 0;
+  margin-bottom: 8vw;
+  padding: 0 1rem;
 }
 
-/* Header title styling */
 .app__header-title {
-  font-size: calc(1rem + 6vw);
+  font-size: calc(1.2rem + 5vw);
   font-weight: 600;
-  line-height: 1;
-  padding-bottom: 1rem;
+  line-height: 1.2;
+  padding-bottom: 1.5rem;
 }
 
-/* Container for project carousel */
-.mountify__header-projects {
-  display: flex;
-  padding: 4rem 0.25rem;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.mountify__header-projects::-webkit-scrollbar {
-  display: none;
-}
-
-/* Project card styling */
-.mountify__header-project_card {
-  width: 45vw;
-  margin: 0 1.2rem; /* Adjust margin as needed */
-  flex-shrink: 0;
-  transition: transform 0.4s, box-shadow 0.4s;
-  box-shadow: -4px 4px 11px 2px rgb(193 193 193 / 44%);
-  border-radius: 1rem;
-  overflow: hidden;
-}
-
-/* Special card effect */
-.mountify__header-project_card.special {
-  transform: scale(1.3); /* Enlarge the special card */
-  box-shadow: -6px 6px 14px 2px rgb(193 193 193 / 50%); /* Optional: Increase shadow for special effect */
-}
-
-/* Add padding to the first and last cards */
-.mountify__header-project_card:first-child {
-  margin-left: 2rem; /* Adjusted padding for smooth scroll */
-}
-
-.mountify__header-project_card:last-child {
-  margin-right: 2rem; /* Adjusted padding for smooth scroll */
-}
-
-.mountify__header-project_card-image {
-  width: 100%;
-  height: 100%;
+.mountify__header-contents button {
+  font-size: calc(0.8rem + 2vw);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
 }
