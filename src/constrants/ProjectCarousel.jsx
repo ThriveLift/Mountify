@@ -6,64 +6,45 @@ const ProjectCarousel = () => {
   const carouselRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Function to smoothly scroll to a position
-  const scrollToPosition = (targetPosition, duration) => {
-    if (carouselRef.current) {
-      const start = carouselRef.current.scrollLeft;
-      const startTime = performance.now();
-
-      const scroll = (currentTime) => {
-        const timeElapsed = currentTime - startTime;
-        const progress = Math.min(timeElapsed / duration, 1);
-        const easeInOut =
-          progress < 0.5
-            ? 2 * progress * progress
-            : -1 + (4 - 2 * progress) * progress;
-
-        carouselRef.current.scrollLeft =
-          start + (targetPosition - start) * easeInOut;
-
-        if (timeElapsed < duration) {
-          requestAnimationFrame(scroll);
-        }
-      };
-
-      requestAnimationFrame(scroll);
-    }
-  };
-
-  // Convert viewport width (vw) to pixels
-  const vwToPixels = (vw) => {
-    return (vw / 100) * window.innerWidth;
-  };
-
-  // Scroll handler for active index update on scroll
+  // Scroll handler to update the active card index based on percentage scroll
   useEffect(() => {
     const handleScroll = () => {
       if (carouselRef.current) {
         const carousel = carouselRef.current;
-        const carouselWidth = carousel.offsetWidth;
-        const scrollPosition = carousel.scrollLeft;
+        const totalScrollWidth = carousel.scrollWidth - carousel.clientWidth; // Total scrollable width
+        const scrollPosition = carousel.scrollLeft; // Current scroll position
+        const numberOfCards = projects.length;
 
-        let newActiveIndex = 0;
-        let closestDistance = Infinity;
+        // Calculate how far we've scrolled as a percentage of the total scrollable width
+        const scrollPercentage = (scrollPosition / totalScrollWidth) * 100;
 
-        Array.from(carousel.children).forEach((child, index) => {
-          const childWidth = child.offsetWidth;
-          const childLeft = child.offsetLeft;
+        // Calculate breakpoints based on the number of cards
+        const breakpointPercentage = 100 / (numberOfCards - 1);
 
-          // Calculate distance from the center of the viewport
-          const distance = Math.abs(
-            childLeft + childWidth / 2 - (scrollPosition + carouselWidth / 2)
-          );
+        let newIndex = 0; // Default to the first card
 
-          if (distance < closestDistance) {
-            closestDistance = distance;
-            newActiveIndex = index;
+        // Check if we're at the very start of the carousel (or very close)
+        if (scrollPosition <= 0) {
+          newIndex = 0;
+        }
+        // Check if we're at or beyond the last breakpoint
+        else if (scrollPercentage >= 100) {
+          newIndex = numberOfCards - 1;
+        }
+        // Loop through breakpoints to determine which card should be active
+        else {
+          for (let i = 1; i < numberOfCards; i++) {
+            if (
+              scrollPercentage >= breakpointPercentage * (i - 1) &&
+              scrollPercentage < breakpointPercentage * i
+            ) {
+              newIndex = i;
+              break;
+            }
           }
-        });
+        }
 
-        setActiveIndex(newActiveIndex);
+        setActiveIndex(newIndex); // Update the active card
       }
     };
 
@@ -77,22 +58,7 @@ const ProjectCarousel = () => {
         carouselElement.removeEventListener("scroll", handleScroll);
       }
     };
-  }, []);
-
-  // Effect for initial scroll on load
-  useEffect(() => {
-    const delay = 1560; // Delay in milliseconds before scrolling
-    const duration = 900; // Duration of the scroll animation
-    const scrollAmountVW = 32; // Amount to scroll (in viewport width units)
-
-    const scrollAmountPixels = vwToPixels(scrollAmountVW);
-
-    const timer = setTimeout(() => {
-      scrollToPosition(scrollAmountPixels, duration);
-    }, delay);
-
-    return () => clearTimeout(timer);
-  }, []);
+  }, []); // Empty dependency array: run once when the component mounts
 
   return (
     <div className="project-carousel" ref={carouselRef}>

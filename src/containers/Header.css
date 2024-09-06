@@ -9,19 +9,44 @@
   justify-content: center;
   align-items: flex-start;
   flex-shrink: 0;
-  margin-bottom: 8vw;
+  margin-bottom: 2rem;
   padding: 0 1rem;
 }
 
-.app__header-title {
-  font-size: calc(1.2rem + 5vw);
+.mountify__header-title {
+  font-size: 2.4rem;
   font-weight: 600;
   line-height: 1.2;
   padding-bottom: 1.5rem;
 }
 
 .mountify__header-contents button {
-  font-size: calc(0.8rem + 2vw);
+  font-size: 1.4rem;
   font-weight: 600;
   padding: 0.5rem 1rem;
+}
+
+@media screen and (min-width: 480px) {
+  .mountify__header-contents {
+    padding: 1rem 2rem;
+  }
+  .mountify__header-title {
+    font-size: 3.4rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .mountify__header {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .mountify__header-contents {
+    padding-right: 5vw;
+    padding-left: 5vw;
+  }
+}
+
+@media screen and (min-width: 1200px) {
 }

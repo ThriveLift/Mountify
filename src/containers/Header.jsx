@@ -57,7 +57,7 @@ const Header = ({ toggleContactForm }) => {
   return (
     <div className="mountify__header">
       <div className="mountify__header-contents">
-        <h1 className="app__header-title suse">
+        <h1 className="mountify__header-title suse">
           <span ref={el} className="typewriter"></span> <br />
           TV & Soundbar <br /> Mounting
         </h1>
