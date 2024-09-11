@@ -20,12 +20,6 @@
   padding-bottom: 1.5rem;
 }
 
-.mountify__header-contents button {
-  font-size: 1.4rem;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-}
-
 @media screen and (min-width: 480px) {
   .mountify__header-contents {
     padding: 1rem 2rem;
@@ -42,11 +36,14 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .mountify__header-contents {
-    padding-right: 5vw;
-    padding-left: 5vw;
-  }
 }
 
 @media screen and (min-width: 1200px) {
+  .mountify__header-contents {
+    padding-right: 5vw;
+    padding-left: 14vw;
+  }
+  .mountify__header-title {
+    font-size: 4.4rem;
+  }
 }

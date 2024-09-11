@@ -13,7 +13,27 @@
 
 /* Main heading */
 h1 {
-  font-size: 2rem;
+  font-size: 12.5vmin;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "suse";
 }
 
 .gradient-bg {
@@ -26,9 +46,22 @@ h1 {
   );
 }
 
+.section__padding {
+  padding: 1rem 2rem;
+}
+.section__marginTop {
+  margin-top: 12vw;
+}
+
+.facebookTxt-bg {
+  background: linear-gradient(90deg, rgb(25, 25, 208) 0%, rgb(4, 47, 146) 85%);
+}
+
 .custom_button {
   background: var(--blue-gradient-color-);
+  font-size: 6vmin;
   padding: 0.35rem 0.75rem;
+  margin-top: 1rem;
   border-radius: 0.75rem;
   color: white;
   cursor: pointer;

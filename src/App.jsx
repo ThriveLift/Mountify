@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Navbar, WhyUs } from "./components";
-import { Header } from "./containers";
+import { Navbar, WhyUs, Reviews } from "./components";
+import { Header, Services } from "./containers";
 import ContactForm from "./constrants/ContactForm";
 import TvGraphic from "./constrants/TvGraphic";
 import "./styles/App.css";
@@ -23,6 +23,8 @@ const App = () => {
         <TvGraphic />
       </div>
       <WhyUs />
+      <Reviews />
+      <Services />
     </>
   );
 };

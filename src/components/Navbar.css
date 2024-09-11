@@ -1,16 +1,11 @@
-/* Reset any potential overflow issues */
-/* body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-} */
-
 .mountify__navbar {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
   width: 100vw;
+  z-index: 1000;
 }
 
 .mountify__navbar-logo img {
@@ -50,7 +45,7 @@
 }
 
 .mountify__navbar-mobileMenu_list li {
-  font-size: 1rem;
+  font-size: 6vmin;
   padding: 0.75rem 0;
 }
 

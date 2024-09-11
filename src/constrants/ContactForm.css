@@ -29,7 +29,7 @@
   align-items: flex-start;
   padding: 10vh calc(4vw + 1rem);
   padding-bottom: 2vh;
-  z-index: 1000;
+  z-index: 100000;
   overflow: auto;
 }
 

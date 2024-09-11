@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import projects from "./index";
+import projects from "./projectsPhotos";
 import "./ProjectCarousel.css";
 
 const ProjectCarousel = () => {
@@ -43,7 +43,6 @@ const ProjectCarousel = () => {
             }
           }
         }
-
         setActiveIndex(newIndex); // Update the active card
       }
     };

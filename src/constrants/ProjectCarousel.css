@@ -32,7 +32,7 @@
 /* Active card */
 .project-card.active {
   transform: scale(1.1);
-  box-shadow: 0px 8px 7px 0px rgb(97 97 97 / 28%);
+  box-shadow: 0px 10px 12px 3px rgb(107 107 107 / 17%);
   margin-bottom: 1rem;
   margin-top: 0;
 }

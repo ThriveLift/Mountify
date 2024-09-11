@@ -6,7 +6,7 @@
   height: 48vw;
   margin-top: 10vw;
   overflow: hidden;
-  z-index: 10;
+  z-index: 1;
 }
 
 .mountify__tvGraphic--image {
