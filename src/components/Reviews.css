@@ -12,7 +12,6 @@
 
 .mountify__reviews-title {
   text-align: start;
-  font-size: 1.5rem;
   padding: 1.25rem 1rem 0rem;
 }
 .facebookText {
@@ -52,7 +51,7 @@
 }
 
 .mountify__reviews--review-name {
-  font-size: 5vmin;
+  /* font-size: 5vmin; */
   padding-bottom: 0.25rem;
 }
 .mountify__reviews--review-stars {

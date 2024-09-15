@@ -12,15 +12,15 @@ const Reviews = () => {
         alt=""
       />
 
-      <h2 className="mountify__reviews-title">
+      <h3 className="mountify__reviews-title">
         <span className="facebookText facebookTxt-bg">Facebook</span>
         Reviews
-      </h2>
+      </h3>
 
       <div className="mountify__reviews--cards">
         {reviews.map((review, index) => (
           <div key={index} className="mountify__reviews--review_card">
-            <h3 className="mountify__reviews--review-name">{review.name}</h3>
+            <h4 className="mountify__reviews--review-name">{review.name}</h4>
             <div className="mountify__reviews--review-stars">
               {review.stars}
             </div>

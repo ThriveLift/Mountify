@@ -35,13 +35,13 @@ const Navbar = ({ toggleContactForm }) => {
         ))}
       </div>
 
-      <div className="mountify__navbar-mobileMenu">
-        <a
+      <div className="mountify__navbar-mobileMenu roboto">
+        <h5
           className="custom_button mountify__navbar-mobileMenu_button-outside"
           onClick={toggleContactForm}
         >
           Contact
-        </a>
+        </h5>
 
         <button onClick={handleClick} aria-label="Toggle Navigation menu">
           {isMenuVisible ? (
@@ -52,7 +52,7 @@ const Navbar = ({ toggleContactForm }) => {
         </button>
 
         <div
-          className={`mountify__navbar-mobileMenu_list-container ${
+          className={` mountify__navbar-mobileMenu_list-container custom__containerBox ${
             isMenuVisible ? "showMenu" : "hideMenu"
           }`}
         >
@@ -62,10 +62,10 @@ const Navbar = ({ toggleContactForm }) => {
                 <a href={item.link}>{item.name}</a>
               </li>
             ))}
-            <li className="mountify__navbar-mobileMenu_button-insde">
-              <a className="custom_button" onClick={toggleContactForm}>
+            <li className="mountify__navbar-mobileMenu_button-inside">
+              <h4 className="custom_button roboto" onClick={toggleContactForm}>
                 Contact
-              </a>
+              </h4>
             </li>
           </ul>
         </div>

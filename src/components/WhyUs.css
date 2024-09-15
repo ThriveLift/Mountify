@@ -1,39 +1,114 @@
-.mountify__whyUs-articles {
-  padding: 0.5rem 0;
+/* Container Styles */
+.mountify__whyUs {
+  padding: 2.75rem 2.25rem; /* Adjust for general padding */
+  margin: 0 auto;
+  max-width: 450px;
 }
+
+.mountify__whyUs h2 {
+  padding-bottom: 0.75rem;
+}
+
+/* Article Container */
+.mountify__whyUs-articles {
+  width: 100%;
+  padding: 1.5rem 0;
+  gap: 1.5rem; /* Add gap for spacing between articles */
+}
+
+/* Article Styles */
 .mountify__whyUs-article_content {
   padding: 1rem 0.25rem;
+  text-align: left;
 }
-
-.mountify__whyUs-box1_title {
-  font-size: 1.25rem;
-  background: var(--blue-gradient-color-);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.mountify__whyUs-box1_text {
-  font-size: 1rem;
-}
-
 .mountify__whyUs-article_content:last-child {
   text-align: right;
 }
 
+.mountify__whyUs-box1_title {
+  background: var(--blue-gradient-color);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+/* CTA Button */
 .mountify__whyUs--cta {
-  padding-top: 0.75rem;
+  padding-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-}
-
-.mountify__whyUs--cta-urgency_text {
   text-align: right;
-  font-size: 1rem;
-  width: 70vw;
-  padding-bottom: 0.75rem;
 }
 
-.mountify__whyUs--cta-button {
-  font-size: 0.75rem;
+/* Media Query Adjustments */
+
+/* At 480px: Adjust spacing */
+@media screen and (min-width: 480px) {
+  .mountify__whyUs {
+    max-width: 620px;
+    padding: 2.75rem 3.75rem;
+  }
+  .mountify__whyUs-article_content:first-child {
+    padding-right: 5vw; /* Adjust for spacing */
+  }
+  .mountify__whyUs-article_content:last-child {
+    padding-left: 5vw; /* Adjust for spacing */
+  }
+  .mountify__whyUs--cta-urgency_text {
+    font-size: 1.6rem;
+  }
+}
+
+/* At 768px: Switch to Row Layout */
+@media screen and (min-width: 768px) {
+  .mountify__whyUs {
+    padding: 2.75rem 3.25rem; /* Adjust padding for larger screen */
+    margin: 0 auto;
+    max-width: unset;
+  }
+
+  /* Set Articles to display in a row */
+  .mountify__whyUs-articles {
+    display: flex;
+    flex-direction: column;
+    flex-direction: row; /* Switch to row layout */
+    justify-content: space-between; /* Space evenly */
+    padding: 4.75rem 0;
+  }
+
+  /* Article takes up 50% of the width */
+  .mountify__whyUs-article_content {
+    width: 50%;
+    /* Slightly less than 50% to allow spacing */
+    padding: 0 1rem; /* Add side padding */
+  }
+
+  /* Center title within articles */
+  .mountify__whyUs-box1_title {
+    height: auto;
+  }
+
+  /* Adjust CTA alignment */
+  .mountify__whyUs--cta {
+    padding-left: 10vw;
+  }
+
+  .mountify__whyUs-article_content:last-child {
+    text-align: left;
+  }
+}
+
+/* Optional: Further adjustments for larger screens (1024px, 1200px) */
+@media screen and (min-width: 1024px) {
+  .mountify__whyUs {
+    padding: 3rem 5rem; /* Further adjust padding */
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .mountify__whyUs {
+    padding: 4rem 6rem; /* More padding for very large screens */
+    max-width: 1200px;
+  }
 }

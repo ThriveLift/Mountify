@@ -1,30 +1,70 @@
-/* APP CSS
-  - Specific to main structure or layout of your application.
-  - Specific Styles tied directly to the app's core components.
-  - Builds ontop of Global Styles
-*/
-
-/* App container styles */
-.app-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+/* Background Gradients */
+.gradient-bg {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255) 10%,
+    var(--cream-wall-color) 55%,
+    var(--cream-wall-color) 100%
+  );
 }
 
-/* Main heading */
+.secondary_gradient-bg {
+  background: var(--black-gradient-color);
+}
+
+/* Facebook Text Background */
+.facebookTxt-bg {
+  background: linear-gradient(90deg, rgb(25, 25, 208) 0%, rgb(4, 47, 146) 85%);
+}
+
+/* Custom Button */
+.custom_button {
+  background: var(--blue-gradient-color);
+  padding: var(--button-padding-s);
+  border-radius: var(--border-radius-medium);
+  color: white;
+  cursor: pointer;
+}
+
+.custom_button:hover {
+  background: rgb(28, 139, 199);
+}
+
+.custom__containerBox {
+  background: var(--black-gradient-color);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* Increase box shadow for better visibility */
+  border-radius: 1.5rem; /* Adjust border radius */
+  padding: 2.5rem 4rem;
+}
+/* Main Headings */
 h1 {
-  font-size: 12.5vmin;
-  font-weight: 600;
+  font-size: 2.5rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
+  line-height: 1.1;
 }
 
 h2 {
-  font-size: 1.75rem;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 800;
+  padding-bottom: 0.25rem;
 }
 
 h3 {
+  font-size: 1.5rem;
+  line-height: 1.1;
+  font-weight: 700;
+  padding-bottom: 0.5rem;
+}
+
+h4 {
   font-size: 1.25rem;
   font-weight: 600;
+}
+h5 {
+  font-size: 1rem;
+  font-size: 600;
 }
 
 h1,
@@ -33,39 +73,70 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "suse";
+  font-family: var(--font-family-serif);
 }
 
-.gradient-bg {
-  position: relative;
-  background: linear-gradient(
-    180deg,
-    white 0%,
-    var(--creamWall-color-) 55%,
-    var(--creamWall-color-) 100%
-  );
+p {
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
 }
 
-.section__padding {
-  padding: 1rem 2rem;
+@media screen and (min-width: 480px) {
+  h1 {
+    font-size: 3.2rem;
+  }
+  h2 {
+    font-size: 2.25rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  p {
+    font-size: 1.5rem;
+  }
 }
-.section__marginTop {
-  margin-top: 12vw;
+@media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.75rem;
+  }
+  h3 {
+    font-size: 2.25rem;
+  }
+  h4 {
+    font-size: 1.75rem;
+  }
+  p {
+    font-size: 1.75rem;
+  }
+}
+@media screen and (min-width: 1200px) {
 }
 
-.facebookTxt-bg {
-  background: linear-gradient(90deg, rgb(25, 25, 208) 0%, rgb(4, 47, 146) 85%);
+@media screen and (min-width: 1200px) {
+  .gradient-bg {
+    position: relative;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255) 10%,
+      var(--cream-wall-color) 45%,
+      var(--cream-wall-color) 100%
+    );
+  }
 }
 
-.custom_button {
-  background: var(--blue-gradient-color-);
-  font-size: 6vmin;
-  padding: 0.35rem 0.75rem;
-  margin-top: 1rem;
-  border-radius: 0.75rem;
-  color: white;
-  cursor: pointer;
-}
-.custom_button:hover {
-  background: rgb(28, 139, 199);
+@media screen and (min-width: 2050px) {
+  .gradient-bg {
+    position: relative;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255) 10%,
+      var(--cream-wall-color) 37.5%,
+      var(--cream-wall-color) 100%
+    );
+  }
 }

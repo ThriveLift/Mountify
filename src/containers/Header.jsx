@@ -57,14 +57,14 @@ const Header = ({ toggleContactForm }) => {
   return (
     <div className="mountify__header">
       <div className="mountify__header-contents">
-        <h1 className="">
+        <h1>
           <span ref={el} className="typewriter"></span> <br />
           TV & Soundbar <br /> Mounting
         </h1>
 
-        <button className="custom_button" onClick={toggleContactForm}>
+        <h4 className="custom_button roboto" onClick={toggleContactForm}>
           Free Quote
-        </button>
+        </h4>
       </div>
       <ProjectCarousel />
     </div>

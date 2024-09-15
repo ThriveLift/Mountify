@@ -3,51 +3,50 @@ import "./WhyUs.css";
 
 const WhyUs = () => {
   return (
-    <section className="section__padding section__marginTop">
+    <section className="mountify__whyUs">
       <h2>Why Mountify?</h2>
-      <p className="mountify__whyUs-text">
-        Your home deserves more than just a functional TV mount—it deserves an
-        elegant transformation. Imagine your living room with a beautifully
-        mounted TV or soundbar, perfectly aligned and seamlessly integrated into
-        your space. Our experts bring not only skill but an eye for detail,
-        ensuring that every installation is sleek, clean, and tailored to your
-        home's aesthetic.
+
+      <p>
+        Your home deserves more than just a TV mount — it deserves a
+        transformation. We don't just install; we supply and expertly mount TVs
+        and soundbars, elevating your space with sleek, seamless designs that
+        blend perfectly with your décor.
       </p>
+
       <div className="mountify__whyUs-articles">
         <article className="mountify__whyUs-article_content">
-          <h3 className="mountify__whyUs-box1_title">100% Satisfied</h3>
+          <h3 className="mountify__whyUs-box1_title">
+            100% Satisfaction Guaranteed
+          </h3>
           <p className="mountify__whyUs-box1_text">
-            Mounting your TV or soundbar can be daunting—whether it's the fear
-            of drilling holes, aligning everything perfectly, or ensuring the
-            mount is truly secure. At Mountify, we take away the stress. With
-            expert hands, the right tools, and a focus on precision, we
-            guarantee smooth, worry-free results. Your satisfaction is our top
-            priority, and we don't leave until you're 100% happy with the
-            installation.
+            We take the stress out of mounting. No guesswork, no hassle—just
+            expert precision and flawless results. We don't leave until you're
+            completely satisfied.
           </p>
         </article>
 
         <article className="mountify__whyUs-article_content">
-          <h3 className="mountify__whyUs-box1_title">Life-Time Guarantee</h3>
+          <h3 className="mountify__whyUs-box1_title">Lifetime Guarantee</h3>
           <p className="mountify__whyUs-box1_text">
-            Mounting your TV isn't just about convenience; it's about safety. We
-            understand how important it is to keep your young loved ones and
-            pets safe from potential hazards. Our installations are built to
-            last, and we confidently back our work with a lifetime guarantee.
-            With Mountify, you can trust that your TV or soundbar is securely
-            and professionally mounted, providing peace of mind for years to
-            come.
+            Our work stands the test of time. Built for safety and durability,
+            we offer a lifetime guarantee, so you can enjoy your space without
+            worry. Your family's safety, especially for kids and pets, is our
+            priority.
           </p>
         </article>
       </div>
 
       <div className="mountify__whyUs--cta">
-        <p className="mountify__whyUs--cta-urgency_text">
-          Dont Wait - Transform Your Space Today!
+        <h3>
+          Dont Wait - <br /> Transform Today
+        </h3>
+        <p>
+          Experience the Mountify difference — secure, stylish, and built to
+          last. From Wall to WoW!
         </p>
-        <a className="mountify__whyUs--cta-button custom_button" href="">
+        <h4 className="custom_button" href="" style={{ marginTop: "1rem" }}>
           Contact Us
-        </a>
+        </h4>
       </div>
     </section>
   );

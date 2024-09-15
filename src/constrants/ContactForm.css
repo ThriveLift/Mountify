@@ -1,100 +1,119 @@
-/* Define CSS variables for colors and spacing */
-:root {
-  --background-color: var(--black-gradient-color-);
-  --input-background: var(--blackish-gradient-color-);
-  --input-border-color: #1039ff52;
-  --placeholder-color: #bcbcbc;
-  --text-color: white;
-  --font-size-large: 6vh;
-  --font-size-medium: 1.5rem;
-  --input-padding: 1rem 10px;
-  --textarea-height: 25vh;
-  --gap: 1rem;
-  --border-radius: 0.25rem;
-  --border-radius-large: 1rem;
-}
-
 /* General responsive layout */
 .mountify__contactForm {
-  position: fixed;
+  position: fixed; /* Fixed positioning to cover the whole screen */
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: var(--background-color);
-  color: var(--text-color);
+  width: 100%;
+  height: 100%;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.8
+  ); /* Using a global variable could be better if defined */
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 10vh calc(4vw + 1rem);
-  padding-bottom: 2vh;
-  z-index: 100000;
-  overflow: auto;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  z-index: 10000000; /* Ensure it’s above other content */
+  overflow: hidden; /* Hide scrollbars */
+}
+
+/* Form container styling */
+.mountify__contactForm--container {
+  width: 85%;
+  height: 500px;
+  max-width: 350px;
 }
 
 /* Title styling */
 .mountify__contactForm-title {
-  font-size: var(--font-size-large); /* Responsive font size */
-  margin-bottom: 2rem;
+  font-size: var(--font-size-heading); /* Use heading font size variable */
+  margin-bottom: var(--spacing-s); /* Use spacing variable */
+  text-align: center; /* Center the title */
+  color: white; /* Dark text color */
 }
 
 /* Form styling */
 form {
   display: flex;
   flex-direction: column;
-  gap: var(--gap);
-  width: 100%;
-  justify-content: center;
-  align-items: flex-end;
+  gap: var(--spacing-s); /* Use spacing variable */
 }
 
 /* Input and textarea styling */
 input,
 textarea {
-  border: none;
-  border-radius: var(--border-radius);
-  font-size: 1.2rem;
+  border: 1px solid #ccc; /* Consider using a variable for the border color if defined */
+  border-radius: var(--border-radius-medium); /* Use border-radius variable */
+  font-size: var(--font-size-base); /* Use base font size variable */
   width: 100%;
-  background: var(--input-background);
-  box-shadow: -6px 0px 0px var(--input-border-color);
-  border-bottom-right-radius: var(--border-radius-large);
-  padding: var(--input-padding);
+  background: #f5f5f5; /* Consider using a variable for background color if defined */
+  padding: var(--spacing-xs); /* Use spacing variable */
+  box-sizing: border-box; /* Include padding in width */
 }
 
 textarea {
-  height: var(--textarea-height); /* Responsive height for textarea */
-}
-
-/* Button styling */
-.mountify__contactForm-button {
-  font-size: var(--font-size-medium);
-  background: var(
-    --blue-gradient-color-
-  ); /* Ensure button styling consistency */
-  padding: 0.5rem 1rem; /* Adjust padding if needed */
-  border: none;
-  border-radius: var(--border-radius);
-  color: white;
-  cursor: pointer;
-}
-
-.mountify__contactForm-button:hover {
-  background: rgb(28, 139, 199); /* Hover effect for the button */
-}
-
-/* Placeholder styling */
-.mountify__contactForm input::placeholder,
-.mountify__contactForm textarea::placeholder {
-  color: var(--placeholder-color);
-  opacity: 1;
-  letter-spacing: 1px;
-  font-weight: 500;
+  height: 150px;
 }
 
 /* Close button styling */
 .mountify__contactForm-close_button {
   position: absolute;
-  top: 2rem;
-  right: 1.2rem;
+  top: 1.75rem;
+  right: 1rem;
+  cursor: pointer; /* Pointer cursor for the close button */
+  color: white;
+}
+
+label,
+.mountify__contactForm--button {
+  color: white;
+}
+
+.mountify__contactForm--button {
+  font-size: var(--font-size-base); /* Use base font size variable */
+  text-decoration: underline;
+  text-underline-offset: var(
+    --text-underline-offset
+  ); /* Use text decoration variable */
+  text-align: right;
+}
+
+.mountify__contactForm--button:hover {
+  color: rgb(
+    204,
+    204,
+    204
+  ); /* Consider using a variable for hover color if defined */
+}
+
+.contactForm-image {
+  display: none;
+  border-bottom-left-radius: var(
+    --border-radius-large
+  ); /* Use border-radius variable */
+  border-top-left-radius: var(
+    --border-radius-large
+  ); /* Use border-radius variable */
+}
+
+@media screen and (min-width: 480px) {
+  .mountify__contactForm-close_button {
+    top: calc(
+      var(--spacing-xs) + 2rem
+    ); /* Adjust as needed for different breakpoints */
+    right: calc(
+      var(--spacing-xs) + 2rem
+    ); /* Adjust as needed for different breakpoints */
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contactForm-image {
+    display: block;
+  }
+  .custom__containerBox {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
 }
