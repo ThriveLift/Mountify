@@ -6,3 +6,4 @@ export default defineConfig({
   plugins: [react()],
   base: "/Mountify/", // Ensure this matches your GitHub Pages path
 });
+
