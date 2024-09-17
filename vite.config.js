@@ -1,7 +1,8 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
-// https://vitejs.dev/config/
+// Replace 'repository-name' with your actual repository name
 export default defineConfig({
   plugins: [react()],
-})
+  base: "/Mountify/", // Ensure this matches your GitHub Pages path
+});
