@@ -1,7 +1,7 @@
 import React from "react";
 import "./Reviews.css";
 import reviews from "../constrants/reviews";
-import backGroundImage from "../assets/reviewsBackground-image.jpg";
+import backGroundImage from "../assets/reviewsBackgroundIMG.jpg";
 
 const Reviews = () => {
   return (
